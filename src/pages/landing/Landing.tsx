@@ -1,69 +1,12 @@
-import { Link } from "react-router-dom";
-
 import imgHomeHero from "/home-hero.png";
 
-import { PublicRoutes } from "../../routes/routes";
+import NavBar from "../../components/NavBar";
+import FooterContent from "../../components/FooterContent";
 
 function Landing() {
   return (
     <div className="min-h-screen w-full">
-      {/* bg-[#121212]  border-b border-white  */}
-      <header
-        style={{ fontFamily: "Bebas Neue" }}
-        className="z-10 fixed flex-col md:flex-row px-8 py-4 gap-4 backdrop-blur-sm bg-transparent border-b border-white  text-white text-sm w-full flex items-center justify-between"
-      >
-        <nav className="w-full px-4 py-3  font-semibold  tracking-widest text-xl bg-opacity-60">
-          <div className="flex justify-between items-center gap-2 ">
-            <div>
-              <Link
-                to={PublicRoutes.landing}
-                className="items-center gap-4 hover:text-white transition-colors"
-              >
-                MOCCA
-              </Link>
-            </div>
-            {/* Center backdrop-blur-sm  Bebas Neue",cursive */}
-            <div className="flex justify-center items-center gap-4">
-              <div className="flex items-center relative">
-                <Link
-                  to={PublicRoutes.landing}
-                  className="hover:text-[#ce7533] p-2 transition-colors"
-                >
-                  CAFES
-                </Link>
-              </div>
-              <div>|</div>
-              <div className="flex items-center relative">
-                <Link
-                  to={PublicRoutes.landing}
-                  className="hover:text-[#ce7533] p-2 transition-colors"
-                >
-                  TIENDA
-                </Link>
-              </div>
-              <div>|</div>
-              <div>
-                <Link
-                  to={PublicRoutes.landing}
-                  className="hover:text-[#ce7533] p-2 transition-colors"
-                >
-                  SHOP
-                </Link>
-              </div>
-            </div>
-
-            {/* Rigth */}
-            <div className="flex justify-center items-center">
-              <Link
-                to={PublicRoutes.landing}
-                className="hover:text-[#ce7533] p-2 transition-colors"
-              >
-                LOGIN
-              </Link>
-            </div>
-          </div>
-        </nav>
-      </header>
+      <NavBar />
       {/* 1600 × 936 px https://bc-clone.netlify.app/static/media/homeview-hdr-bg.5776f137.jpg */}
       <section
         style={{
@@ -137,7 +80,7 @@ function Landing() {
               We opened an artisanal roastery in Carouge where our small team of
               dedicated roasters works to match the profiles of the green coffee
               beans we import with a roast that brings out their best
-              characteristics.
+              characteristics. 
             </p>
             <p className="mb-3 font-normal">
               And, knowing that we work directly with the farmers themselves
@@ -184,76 +127,7 @@ function Landing() {
       </main> */}
       {/* <Outlet /> */}
       {/* bg-[#121212] h-60 text-white */}
-      <footer className="h-60">
-        <div className="flex flex-col md:flex-row items-start p-4 md:px-20 leading-normal ">
-          <img
-            src="https://www.borealcoffee.ch/design/themes/boreal/assets/dist/images/logo-footer.png"
-            alt="logo"
-            width={100}
-            height={100}
-            className="mt-4"
-          />
-          <div className="p-4">
-            <h4 className="font-bold mb-1">FIND US Discover</h4>
-            <p>We have 3 shops in Geneva and 2 in Zurich</p>
-            <p>them arrow</p>
-          </div>
-          <img
-            src="https://www.borealcoffee.ch/design/themes/boreal/assets/dist/images/locations-footer.png"
-            alt="logo"
-            width={100}
-            height={100}
-            className="mt-4"
-          />
-          <div className="p-4">
-            {/* Shop Terms & Conditions Contact */}
-            <h4 className="font-bold mb-1">SUPPORT</h4>
-            <ul>
-              <li>Cafes</li>
-              <li>Coffee catering</li>
-              <li> Jebrew</li>
-              <li>Jebrew Leonard</li>
-            </ul>
-          </div>
-          <div className="p-4 flex flex-col gap-4">
-            <div className="flex flex-row gap-4 ">
-              <div className="flex flex-row gap-4">
-                <h4 className="font-bold">LANGUAGE</h4>
-                <select name="language" id="language">
-                  <option value="EN">EN</option>
-                </select>
-              </div>
-              <div className="flex flex-row gap-4">
-                <h4 className="font-bold">CURRENCY</h4>
-                <select name="currency" id="currency">
-                  <option value="EUR">EUR</option>
-                </select>
-              </div>
-            </div>
-            <div className="flex flex-row gap-1">
-              <h4 className="font-bold mr-4">Follow us:</h4>
-              <img
-                src="https://img.icons8.com/material-outlined/24/000000/facebook-f.png"
-                alt="facebook"
-                width={22}
-                height={2}
-              />
-              <img
-                src="https://img.icons8.com/ios-filled/24/000000/instagram.png"
-                alt="youtube"
-                width={25}
-                height={2}
-              />
-              <img
-                src="https://img.icons8.com/material-rounded/24/000000/youtube-play.png"
-                alt="youtube"
-                width={25}
-                height={2}
-              />
-            </div>
-          </div>
-        </div>
-      </footer>
+      <FooterContent />
     </div>
   );
 }

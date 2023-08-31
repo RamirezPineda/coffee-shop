@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import "./App.css";
 
 const Landing = lazy(() => import("./pages/landing/Landing"));
+const WhoWeAre = lazy(() => import("./pages/landing/whoWeAre/WhoWeAre"));
+const Shop = lazy(() => import("./pages/landing/shop/Shop"));
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Routes>
             <Route index path="/" element={<Landing />} />
             <Route path="/landing" element={<Landing />} />
+            <Route path="/who-we-are" element={<WhoWeAre />} />
+            <Route path="/shop" element={<Shop />} />
           </Routes>
         </BrowserRouter>
       </Suspense>
