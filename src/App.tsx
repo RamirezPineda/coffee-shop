@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { PublicRoutes } from "./routes/routes";
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
 // import "./App.css";
@@ -7,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 const Landing = lazy(() => import("./pages/landing/Landing"));
 const WhoWeAre = lazy(() => import("./pages/landing/whoWeAre/WhoWeAre"));
 const Shop = lazy(() => import("./pages/landing/shop/Shop"));
+const Product = lazy(() => import("./pages/landing/shop/components/Product"));
 
 function App() {
   return (
@@ -15,9 +17,10 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route index path="/" element={<Landing />} />
-            <Route path="/landing" element={<Landing />} />
-            <Route path="/who-we-are" element={<WhoWeAre />} />
-            <Route path="/shop" element={<Shop />} />
+            <Route path={PublicRoutes.landing} element={<Landing />} />
+            <Route path={PublicRoutes.wheWeAre} element={<WhoWeAre />} />
+            <Route path={PublicRoutes.shop} element={<Shop />} />
+            <Route path={`${PublicRoutes.product}/:id`} element={<Product />} />
           </Routes>
         </BrowserRouter>
       </Suspense>

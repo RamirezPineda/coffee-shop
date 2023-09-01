@@ -1,13 +1,13 @@
 function FooterContent() {
   return (
-    <footer className="h-60">
-      <div className="flex flex-col md:flex-row items-start p-4 md:px-20 leading-normal ">
+    <footer className="h-60 text-sm">
+      <div className="flex flex-col md:flex-row items-start p-4 py-10 md:px-28 leading-normal ">
         <img
           src="https://www.borealcoffee.ch/design/themes/boreal/assets/dist/images/logo-footer.png"
           alt="logo"
           width={100}
           height={100}
-          className="mt-4"
+          className="mt-4" 
         />
         <div className="p-4">
           <h4 className="font-bold mb-1">FIND US Discover</h4>

@@ -80,7 +80,7 @@ function Landing() {
               We opened an artisanal roastery in Carouge where our small team of
               dedicated roasters works to match the profiles of the green coffee
               beans we import with a roast that brings out their best
-              characteristics. 
+              characteristics.
             </p>
             <p className="mb-3 font-normal">
               And, knowing that we work directly with the farmers themselves
@@ -120,6 +120,28 @@ function Landing() {
           </p>
         </div>
       </section>
+
+      {/*  section for component */}
+      <section>
+        <div className="flex flex-col md:flex-row gap-4 bg-zinc-800 h-32">
+          <div className="w-1/4 items-center px-4 pt-3 pb-1 ml-20">
+            <img
+              src="https://www.borealcoffee.ch/design/themes/boreal/assets/dist/images/content/boreal-coffee.png"
+              alt="product coffee"
+              className="bg-cover"
+            />
+          </div>
+          <div className="w-3/4 py-8 items-center text-center uppercase">
+            <h2 className="text-[#e67e22] text-base font-semibold">
+              Like what you see? Curious to taste our lovingly roasted beans?
+            </h2>
+            <h4 className="text-white text-xl font-bold">
+              Take a piece of Boreal home with you. This way to our e-shop
+            </h4>
+          </div>
+        </div>
+      </section>
+
       {/* <main
         className="
         xl:pl-[100px] xl:pr-[100px] py-12 min-h-screen flex justify-center items-center bg-green-500"
