@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import FooterContent from "../../../components/FooterContent";
-import NavBar from "../../../components/NavBar";
 import SuscribeBoreal from "../../../components/SuscribeBoreal";
 
 import { Product, productsList } from "../../../constants/productsList";
@@ -18,9 +16,7 @@ function Shop() {
   };
 
   return (
-    <div>
-      <NavBar />
-
+    <>
       {/* background */}
       <div className="h-24 bg-black"></div>
 
@@ -97,9 +93,7 @@ function Shop() {
       </section>
 
       <SuscribeBoreal />
-
-      <FooterContent />
-    </div>
+    </>
   );
 }
 export default Shop;

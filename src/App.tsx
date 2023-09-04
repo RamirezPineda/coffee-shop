@@ -1,6 +1,8 @@
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PublicRoutes } from "./routes/routes";
+
+import MainContent from "./components/MainContent";
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
 // import "./App.css";
@@ -9,6 +11,8 @@ const Landing = lazy(() => import("./pages/landing/Landing"));
 const WhoWeAre = lazy(() => import("./pages/landing/whoWeAre/WhoWeAre"));
 const Shop = lazy(() => import("./pages/landing/shop/Shop"));
 const Product = lazy(() => import("./pages/landing/shop/components/Product"));
+const Locations = lazy(() => import("./pages/landing/locations/Locations"));
+const Catering = lazy(() => import("./pages/landing/catering/Catering"));
 
 function App() {
   return (
@@ -16,11 +20,19 @@ function App() {
       <Suspense fallback={<>Loading ....</>}>
         <BrowserRouter>
           <Routes>
-            <Route index path="/" element={<Landing />} />
-            <Route path={PublicRoutes.landing} element={<Landing />} />
-            <Route path={PublicRoutes.wheWeAre} element={<WhoWeAre />} />
-            <Route path={PublicRoutes.shop} element={<Shop />} />
-            <Route path={`${PublicRoutes.product}/:id`} element={<Product />} />
+            <Route element={<MainContent />}>
+              <Route index path="/" element={<Landing />} />
+              <Route path={PublicRoutes.landing} element={<Landing />} />
+              <Route path={PublicRoutes.wheWeAre} element={<WhoWeAre />} />
+              <Route path={PublicRoutes.shop} element={<Shop />} />
+              <Route
+                path={`${PublicRoutes.product}/:id`}
+                element={<Product />}
+              />
+              <Route path={PublicRoutes.locations} element={<Locations />} />
+              <Route path={PublicRoutes.catering} element={<Catering />} />
+            </Route>
+            <Route path="*" element={<>PAGE NOT FOUNT</>} />
           </Routes>
         </BrowserRouter>
       </Suspense>

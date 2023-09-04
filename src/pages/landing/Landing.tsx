@@ -1,12 +1,9 @@
 import imgHomeHero from "/home-hero.png";
 
-import NavBar from "../../components/NavBar";
-import FooterContent from "../../components/FooterContent";
 
 function Landing() {
   return (
     <div className="min-h-screen w-full">
-      <NavBar />
       {/* 1600 × 936 px https://bc-clone.netlify.app/static/media/homeview-hdr-bg.5776f137.jpg */}
       <section
         style={{
@@ -35,7 +32,7 @@ function Landing() {
             alt="Coffee shop"
             className="object-cover w-full h-96 md:h-auto md:w-1/2"
           />
-          <div className="flex flex-col justify-between p-4 leading-normal mt-5 mb-5 md:px-20">
+          <div className="flex flex-col justify-between p-4 leading-normal my-5 md:px-20">
             <div className="text-center md:text-start">
               <h4 className="text-[#ce7533] font-medium mb-1">
                 THE STORY OF OUR
@@ -68,7 +65,7 @@ function Landing() {
 
       <section>
         <div className="flex flex-col items-center md:flex-row">
-          <div className="flex flex-col justify-between p-4 leading-normal mt-5 mb-5 md:px-20">
+          <div className="flex flex-col justify-between p-4 leading-normal my-5 md:px-20">
             <div className="text-center md:text-start">
               <h4 className="text-[#ce7533] font-medium mb-1">
                 FROM BEAN TO CUP AT
@@ -149,7 +146,6 @@ function Landing() {
       </main> */}
       {/* <Outlet /> */}
       {/* bg-[#121212] h-60 text-white */}
-      <FooterContent />
     </div>
   );
 }

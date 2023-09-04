@@ -1,7 +1,5 @@
 import { useParams } from "react-router-dom";
 
-import FooterContent from "../../../../components/FooterContent";
-import NavBar from "../../../../components/NavBar";
 import SuscribeBoreal from "../../../../components/SuscribeBoreal";
 
 import { productsList } from "../../../../constants/productsList";
@@ -15,7 +13,6 @@ function Product() {
 
   return (
     <>
-      <NavBar />
       <div className="h-24 "></div>
 
       <div className="flex flex-col md:flex-row px-24">
@@ -44,8 +41,6 @@ function Product() {
       </div>
 
       <SuscribeBoreal />
-
-      <FooterContent />
     </>
   );
 }

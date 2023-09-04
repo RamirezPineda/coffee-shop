@@ -15,7 +15,7 @@ function NavBar() {
         navBar?.classList.remove("bg-white");
         navBar?.classList.remove("text-black");
       }
-      // navBar?.classList.toggle("abajo", window.screenY > 0);
+      // navBar?.classList.toggle("prueba", window.screenY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -23,11 +23,13 @@ function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleScroll = () => window.scrollTo(0, 0);
+
   // backdrop-blur-sm
   return (
     <header
       style={{ fontFamily: "Bebas Neue" }}
-      className="text-white z-10 fixed flex-col md:flex-row px-8 py-4 gap-4  border-b border-white text-sm w-full flex items-center justify-between"
+      className="text-white z-10 fixed flex-col md:flex-row px-8 py-4 gap-4 transition-colors duration-300 border-b border-white text-sm w-full flex items-center justify-between"
     >
       {/* bg-[#121212]  border-b border-white  */}
       <nav className="w-full px-4 py-3  font-semibold  tracking-widest text-xl bg-opacity-60">
@@ -35,6 +37,7 @@ function NavBar() {
           <div>
             <Link
               to="/"
+              onClick={handleScroll}
               className="items-center gap-4 hover:text-[#ce7533] transition-colors"
             >
               MOCCA
@@ -45,6 +48,7 @@ function NavBar() {
             <div className="flex items-center relative">
               <Link
                 to={PublicRoutes.wheWeAre}
+                onClick={handleScroll}
                 className="hover:text-[#ce7533] p-2 transition-colors"
               >
                 WHO WE ARE?
@@ -53,16 +57,18 @@ function NavBar() {
             <div>|</div>
             <div className="flex items-center relative">
               <Link
-                to={PublicRoutes.landing}
+                to={PublicRoutes.locations}
+                onClick={handleScroll}
                 className="hover:text-[#ce7533] p-2 transition-colors"
               >
-                CAFES
+                LOCATIONS
               </Link>
             </div>
             <div>|</div>
             <div className="flex items-center relative">
               <Link
                 to={PublicRoutes.shop}
+                onClick={handleScroll}
                 className="hover:text-[#ce7533] p-2 transition-colors"
               >
                 SHOP
@@ -71,10 +77,11 @@ function NavBar() {
             <div>|</div>
             <div>
               <Link
-                to={PublicRoutes.landing}
+                to={PublicRoutes.catering}
+                onClick={handleScroll}
                 className="hover:text-[#ce7533] p-2 transition-colors"
               >
-                SHOP
+                CATERING
               </Link>
             </div>
           </div>
