@@ -13,6 +13,7 @@ const Shop = lazy(() => import("./pages/landing/shop/Shop"));
 const Product = lazy(() => import("./pages/landing/shop/components/Product"));
 const Locations = lazy(() => import("./pages/landing/locations/Locations"));
 const Catering = lazy(() => import("./pages/landing/catering/Catering"));
+const Contact = lazy(() => import("./pages/landing/contact/Contact"));
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               />
               <Route path={PublicRoutes.locations} element={<Locations />} />
               <Route path={PublicRoutes.catering} element={<Catering />} />
+              <Route path={PublicRoutes.contact} element={<Contact />} />
             </Route>
             <Route path="*" element={<>PAGE NOT FOUNT</>} />
           </Routes>

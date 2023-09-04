@@ -1,5 +1,5 @@
+import Promotion from "../../components/Promotion";
 import imgHomeHero from "/home-hero.png";
-
 
 function Landing() {
   return (
@@ -118,26 +118,7 @@ function Landing() {
         </div>
       </section>
 
-      {/*  section for component */}
-      <section>
-        <div className="flex flex-col md:flex-row gap-4 bg-zinc-800 h-32">
-          <div className="w-1/4 items-center px-4 pt-3 pb-1 ml-20">
-            <img
-              src="https://www.borealcoffee.ch/design/themes/boreal/assets/dist/images/content/boreal-coffee.png"
-              alt="product coffee"
-              className="bg-cover"
-            />
-          </div>
-          <div className="w-3/4 py-8 items-center text-center uppercase">
-            <h2 className="text-[#e67e22] text-base font-semibold">
-              Like what you see? Curious to taste our lovingly roasted beans?
-            </h2>
-            <h4 className="text-white text-xl font-bold">
-              Take a piece of Boreal home with you. This way to our e-shop
-            </h4>
-          </div>
-        </div>
-      </section>
+      <Promotion />
 
       {/* <main
         className="
