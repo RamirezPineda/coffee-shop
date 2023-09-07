@@ -6,4 +6,5 @@ export enum PublicRoutes {
   "product" = "/product",
   "catering" = "/catering",
   "contact" = "/contact",
+  "cart" = "/cart",
 }

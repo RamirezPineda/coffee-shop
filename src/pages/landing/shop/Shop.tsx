@@ -17,10 +17,7 @@ function Shop() {
 
   return (
     <>
-      {/* background */}
-      <div className="h-24 bg-black"></div>
-
-      <section className="container">
+      <section className="container pt-24">
         <div className="flex flex-col items-center gap-2 mt-10">
           {/* header section */}
           <div className="flex justify-center items-center">

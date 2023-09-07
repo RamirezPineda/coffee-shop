@@ -7,8 +7,6 @@ export interface Product {
   category: string;
 }
 
-//
-// https://www.borealcoffee.ch/images/thumbnails/900/1394/detailed/1/Yesid_Galindo.png
 
 export const productsList: Product[] = [
   {

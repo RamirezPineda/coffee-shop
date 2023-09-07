@@ -1,34 +1,47 @@
 import Promotion from "../../components/Promotion";
+
+import imgBackgroundHome from "/background-home.jpg";
 import imgHomeHero from "/home-hero.png";
+import imgScrollHome from "/scroll-home.png";
+import imgBlockHome1 from "/block-home-1.jpg";
+import imgBlockHome2 from "/block-home-2.jpg";
 
 function Landing() {
   return (
     <div className="min-h-screen w-full">
-      {/* 1600 × 936 px https://bc-clone.netlify.app/static/media/homeview-hdr-bg.5776f137.jpg */}
       <section
-        style={{
-          backgroundImage: `url('https://bc-clone.netlify.app/static/media/homeview-hdr-bg.5776f137.jpg')`,
-        }}
+        style={{ backgroundImage: `url('${imgBackgroundHome}')` }}
         className="min-h-screen flex justify-center items-center bg-center bg-cover"
-        // className="min-h-screen flex justify-between items-center bg-[#121212] text-white px-4"
       >
-        <div className="flex flex-col items-center ">
-          <img src={imgHomeHero} alt="home hero logo" className="px-5 mb-20" />
-          <div className="flex flex-col md:flex-row items-center gap-4 text-white text-lg px-5">
-            <button className="border border-white font-semibold px-4 py-2 rounded-sm">
-              Mira nuestros productos
+        <div className="flex flex-col items-center pt-24">
+          {/* Image home hero */}
+          <img
+            src={imgHomeHero}
+            alt="home hero logo"
+            className="px-5 mb-16 pt-2"
+          />
+
+          <div className="flex flex-col md:flex-row items-center gap-4 text-white text-sm px-5">
+            <button className="border border-white font-semibold px-6 py-3 rounded-sm">
+              DISCOVER BORÉAL
             </button>
-            <button className="border border-white font-semibold px-4 py-2 rounded-sm">
-              Visita nuestra tiendaaaa
+            <button className="border border-white font-semibold px-6 py-3 rounded-sm">
+              VISIT OUR WEBSHOP
             </button>
           </div>
+
+          <img
+            src={imgScrollHome}
+            alt="scroll"
+            className="w-14 bg-center bg-cover pt-10"
+          />
         </div>
       </section>
 
       <section>
         <div className="flex flex-col items-center md:flex-row">
           <img
-            src="https://bc-clone.netlify.app/static/media/block-home-1-min.67f87515.jpg"
+            src={imgBlockHome1}
             alt="Coffee shop"
             className="object-cover w-full h-96 md:h-auto md:w-1/2"
           />
@@ -89,7 +102,7 @@ function Landing() {
             </button>
           </div>
           <img
-            src="https://www.borealcoffee.ch/images/thumbnails/800/532/promo_hover/1/home.jpg"
+            src={imgBlockHome2}
             alt="home hero section 2"
             className="object-cover w-full h-96 order-first md:order-last md:h-auto md:w-1/2"
           />

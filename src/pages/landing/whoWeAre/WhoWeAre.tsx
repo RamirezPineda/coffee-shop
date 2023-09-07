@@ -5,10 +5,10 @@ function WhoWeAre() {
         style={{
           backgroundImage: `url('https://www.borealcoffee.ch/images/thumbnails/1600/700/page/1/20032018-_DCS5408.png')`,
         }}
-        className="min-h-screen relative flex justify-center items-center bg-center bg-cover"
+        className="min-h-[94vh] relative flex justify-center items-center bg-center bg-cover"
       >
         {/* filtro background */}
-        <div className="absolute inset-0 bg-black opacity-50 z-0 "></div>
+        <div className="absolute inset-0 bg-black opacity-60 z-0 "></div>
 
         <div
           style={{ fontFamily: "Bebas Neue" }}
@@ -25,7 +25,7 @@ function WhoWeAre() {
 
       {/* News */}
       <section>
-        <div className="flex flex-col justify-center p-4 leading-normal w-full md:w-1/2 md:px-40 mt-20">
+        <div className="flex flex-col justify-center p-4 leading-normal w-full md:w-1/2 md:px-40 mt-16">
           <div className="text-center md:text-start">
             <h4 className="text-xl font-medium text-[#e67e22] mb-1">
               Boréal Coffee
