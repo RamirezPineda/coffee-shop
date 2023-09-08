@@ -1,10 +1,13 @@
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
+import { Toaster, toast } from "sonner";
+
 import SuscribeBoreal from "../../../../components/SuscribeBoreal";
+import { RootState } from "../../../../redux/store";
 
 import { productsList } from "../../../../constants/productsList";
-import { RootState } from "../../../../redux/store";
 import {
   addOneProduct,
   addToCart,
@@ -14,18 +17,22 @@ import {
 function Product() {
   const { id } = useParams();
   const cart = useSelector((state: RootState) => state.cart);
+  const [quantityProduct, setQuantityProduct] = useState(1);
   const dispatch = useDispatch();
 
-  console.log(cart);
+  useEffect(() => {
+    const productCart = cart.find((product) => product.id == parseInt(`${id}`));
+
+    setQuantityProduct(productCart ? productCart.quantity : 1);
+  }, [cart, id]);
 
   const productFound = productsList.find(
     (product) => product.id == parseInt(`${id}`)
   );
 
-  const productCart = cart.find((product) => product.id == parseInt(`${id}`));
-
   return (
     <>
+      <Toaster position="top-right" richColors expand />
       <div className="flex flex-col md:flex-row px-24 pt-24">
         <div className="w-1/2 items-center p-4">
           <img
@@ -49,7 +56,7 @@ function Product() {
             </p>
             <input
               type="text"
-              defaultValue={productCart ? productCart.quantity : 0}
+              value={quantityProduct}
               disabled
               className="px-3 py-[1.1rem] text-xl text-center w-16 border-[0.5px] border-zinc-300 focus:border-black focus:outline-none "
             />
@@ -57,7 +64,7 @@ function Product() {
               <button
                 onClick={() => {
                   const existProduct = cart.find(
-                    (product) => product.id == productFound!.id
+                    (product) => product.id === productFound!.id
                   );
 
                   if (!existProduct) {
@@ -73,13 +80,17 @@ function Product() {
                   } else {
                     dispatch(addOneProduct(productFound!));
                   }
+                  toast.success("Product add to cart");
                 }}
                 className="px-10 py-[0.09rem] text-xl hover:bg-[#f78f1e] hover:text-white border-[1px] border-zinc-300 hover:border-[#f78f1e] outline-none transition-colors duration-300"
               >
                 +
               </button>
               <button
-                onClick={() => dispatch(removeOneProduct(productFound!))}
+                onClick={() => {
+                  dispatch(removeOneProduct(productFound!));
+                  toast.error("Product removed of the cart");
+                }}
                 className="px-10 py-[0.09rem] text-xl hover:bg-[#f78f1e] hover:text-white border-[1px] border-zinc-300 hover:border-[#f78f1e] outline-none transition-colors duration-300"
               >
                 -

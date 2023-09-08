@@ -9,7 +9,10 @@ function NavBar() {
   useEffect(() => {
     const navBar = document.querySelector("header");
     const logo = document.getElementById("logo") as HTMLInputElement;
-    if (pathname == PublicRoutes.shop) {
+    if (
+      pathname == PublicRoutes.shop ||
+      pathname.includes(PublicRoutes.product)
+    ) {
       navBar?.classList.remove("text-white");
       navBar?.classList.add("bg-white");
       navBar?.classList.add("text-black");
@@ -29,7 +32,11 @@ function NavBar() {
       const navBar = document.querySelector("header");
       const logo = document.getElementById("logo") as HTMLInputElement;
 
-      if (window.scrollY > 0 || pathname === PublicRoutes.shop) {
+      if (
+        window.scrollY > 0 ||
+        pathname === PublicRoutes.shop ||
+        pathname.includes(PublicRoutes.product)
+      ) {
         navBar?.classList.remove("text-white");
         navBar?.classList.add("bg-white");
         navBar?.classList.add("text-black");
